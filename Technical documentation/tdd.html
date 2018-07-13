@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html>
+
+<body>
+<link rel="stylesheet" type="text/css" href="style.css">
+  <nav id="navbar">
+    <header>SQL documentation</header>
+    <ul>
+      <a class="nav-link" rel="internal" href="#About_SQL">
+        <li>About SQL</li>
+      </a>
+      <a class="nav-link" href="#DDL_and_DML" rel="internal">
+        <li>DDL and DML</li>
+      </a>
+      <a class="nav-link" href="#Table_Basics" rel="internal">
+        <li>Table Basics</li>
+      </a>
+      <a class="nav-link" href="#Selecting_Data" rel="internal">
+        <li>Selecting Data</li>
+      </a>
+      <a class="nav-link" href="#Creating_Tables" rel="internal">
+        <li>Creating Tables</li>
+      </a>
+    </ul>
+  </nav>
+
+  <main id="main-doc">
+    <section class="main-section" id="About_SQL">
+      <header>About SQL</header>
+      <article>
+        <p>The correct pronunciation of SQL is a contentious issue within the database community. In its SQL standard, the American National Standards Institute declared that the official pronunciation is "es queue el." However, many database professionals
+          have taken to the slang pronunciation "sequel." The choice is yours.</p>
+        <p>SQL comes in many flavors. Oracle databases use its proprietary PL/SQL. Microsoft SQL Server makes use of Transact-SQL. All of the variations are based upon the industry standard ANSI SQL. This introduction uses ANSI-compliant SQL commands that
+          work on any modern relational database system.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="DDL_and_DML">
+      <header>DDL and DML
+      </header>
+      <article>
+        <p>SQL commands can be divided into two main sub-languages. The Data Definition Language (DDL) contains the commands used to create and destroy databases and database objects. After the database structure is defined with DDL, database administrators
+          and users can use the Data Manipulation Language (DML) to insert, retrieve and modify the data contained within it.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="Table_Basics">
+      <header>Table Basics
+      </header>
+      <article>
+        <p>A relational database system contains one or more objects called tables. The data or information for the database are stored in these tables. Tables are uniquely identified by their names and are comprised of columns and rows. Columns contain
+          the column name, data type, and any other attributes for the column. Rows contain the records or data for the columns. Here is a sample table called "weather".</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="Selecting_Data">
+      <header>Selecting Data
+      </header>
+      <article>
+        <p>The select statement is used to query the database and retrieve selected data that match the criteria that you specify. Here is the format of a simple select statement:</p>
+        <code>select "column1"
+  [,"column2",etc] 
+  from "tablename"
+  [where "condition"];
+  [] = optional </code>
+        <p>The LIKE pattern matching operator can also be used in the conditional selection of the where clause. Like is a very powerful operator that allows you to select only rows that are "like" what you specify. The percent sign "%" can be used as a
+          wild card to match any possible character that might appear before or after the characters specified. For example:</p>
+        <code>select first, last, city
+   from empinfo
+   where first LIKE 'Er%';</code>
+
+        <p>This SQL statement will match any first names that start with 'Er'. Strings must be in single quotes.Or you can specify,</p>
+
+        <code>select first, last
+   from empinfo
+   where last LIKE '%s';</code>
+
+      </article>
+    </section>
+
+    <section class="main-section" id="Creating_Tables">
+      <header>Creating Tables
+      </header>
+      <article>
+        <p>The create table statement is used to create a new table. Here is the format of a simple create table statement:</p>
+        <code>create table "tablename"
+("column1" "data type",
+ "column2" "data type",
+ "column3" "data type");</code>
+        <p>Format of create table if you were to use optional constraints:</p>
+        <code>create table "tablename"
+("column1" "data type" 
+         [constraint],
+ "column2" "data type" 
+         [constraint],
+ "column3" "data type" 
+        [constraint]);
+ [ ] = optional </code>
+        <p></p>
+        <ul>
+          <li>
+            char(size) :Fixed-length character string. Size is specified in parenthesis. Max 255 bytes.</li>
+          <li>
+            varchar(size):Variable-length character string. Max size is specified in parenthesis.
+          </li>
+          <li>number(size): Number value with a max number of column digits specified in parenthesis.</li>
+          <li>date: Date value</li>
+          <li>number(size,d): Number value with a maximum number of digits of "size" total, with a maximum number of "d" digits to the right of the decimal.</li>
+        </ul>
+       
+
+      </article>
+    </section>
+
+  </main>
+
+</body>
+
+</html>
