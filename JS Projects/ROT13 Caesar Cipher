@@ -1,0 +1,34 @@
+function rot13(str) { // LBH QVQ VG!
+  var CorrectSeq="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var Rot13Seq="NOPQRSTUVWXYZABCDEFGHIJKLM";
+var plainText=CorrectSeq.split('');
+var cipherTextSeq=Rot13Seq.split('');
+var cipherText=str.split('');
+var z;
+
+for(var i in cipherText)
+{
+  console.log(cipherText[i]);
+  if(!(cipherText[i]==' ')&& !(cipherText[i]=='.') && !(cipherText[i]=='?') && !(cipherText[i]=='!'))
+  {
+
+var z=cipherTextSeq.indexOf(cipherText[i]);
+cipherText[i]=arr[z];
+  }
+else
+{
+  cipherText[i]=plainText[i];
+}
+
+}
+  
+
+str=cipherText.toString();
+str=str.replace(/,/g, '');
+
+
+  return str;
+}
+
+// Change the inputs below to test
+rot13("SERR YBIR?");
